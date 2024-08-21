@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import logo from "./assets/react.svg";
-import "./index.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HistoryPage from "./Pages/History.tsx";
