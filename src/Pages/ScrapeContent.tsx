@@ -20,7 +20,7 @@ const ScrapeContent = () => {
     data: data,
   });
 
-  if (error) return <div>error occurred: {error?.message}</div>;
+  if (error) return <div>error occurred: {JSON.stringify(error)}</div>;
 
   if (isLoading) {
     return (

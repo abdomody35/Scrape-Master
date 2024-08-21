@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 import Http from "../http";
-import { FetchResponseProps } from "../types";
 import GoBackButton from "../components/GoBackButton";
 import Loading from "../components/Loading";
 import Card from "../components/Card";
@@ -15,7 +14,7 @@ const FetchContent = () => {
     url: API + "/fetch?url=" + url,
   });
 
-  if (error) return <div>error occurred: {error?.message}</div>;
+  if (error) return <div>error occurred: {JSON.stringify(error)}</div>;
 
   if (isLoading) return <Loading message={`Fetching ${url}`} />;
 
