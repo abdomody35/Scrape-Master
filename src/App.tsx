@@ -17,7 +17,7 @@ const App: React.FC = () => {
   ];
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p>Error: {JSON.stringify(error)}</p>;
   }
 
   return (
