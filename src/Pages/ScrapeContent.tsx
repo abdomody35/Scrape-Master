@@ -11,7 +11,11 @@ const ScrapeContent = () => {
   const API = import.meta.env.VITE_API_BASE_URL;
 
   if (!url || !data) {
-    return <div>No data to display</div>;
+    return (
+      <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+        No data to display
+      </p>
+    );
   }
 
   const { isLoading, error, response } = Http({
@@ -20,13 +24,20 @@ const ScrapeContent = () => {
     data: data,
   });
 
-  if (error) return <div>error occurred: {JSON.stringify(error)}</div>;
+  if (error)
+    return (
+      <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+        error occurred: {JSON.stringify(error)}
+      </p>
+    );
 
   if (isLoading) {
     return (
       <div>
         <div className="loader"></div>
-        <p>Scraping {url}...</p>
+        <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+          Scraping {url}...
+        </p>
       </div>
     );
   }
@@ -36,16 +47,24 @@ const ScrapeContent = () => {
     : [];
 
   return (
-    <div>
-      <GoBackButton />
-      <h2>Scrape Response</h2>
-      {entries.length === 0 && <p>No data found for the given url.</p>}
-      {entries.map(([key, { title, content }]) => (
-        <>
-          <Card key={key} content={content} title={title} />
-          <br />
-        </>
-      ))}
+    <div className="px-40 flex flex-1 justify-center py-10">
+      <div className="layout-content-container flex flex-col max-w-[960px] flex-1 space-y-12">
+        <GoBackButton />
+        <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+          Scrape Response
+        </p>
+        {entries.length === 0 && (
+          <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+            No data found for the given url.
+          </p>
+        )}
+        {entries.map(([key, { title, content }]) => (
+          <>
+            <Card key={key} content={content} title={title} />
+            <br />
+          </>
+        ))}
+      </div>
     </div>
   );
 };

@@ -37,57 +37,61 @@ const ExtractionOptions = ({ modes, setModes }: ExtractOptionsProps) => {
 
   return (
     <>
-      <p>What would you like to get?</p>
-      <label>
-        <input
-          type="checkbox"
-          name="item"
-          value="content"
-          checked={content}
-          onChange={() => handleChange("content")}
-        />
-        Content
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          name="item"
-          value="images"
-          checked={images}
-          onChange={() => handleChange("images")}
-        />
-        Images
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          name="item"
-          value="videos"
-          checked={videos}
-          onChange={() => handleChange("videos")}
-        />
-        Videos
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          name="item"
-          value="audio"
-          checked={audios}
-          onChange={() => handleChange("audios")}
-        />
-        Audios
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          name="item"
-          value="links"
-          checked={links}
-          onChange={() => handleChange("links")}
-        />
-        Links
-      </label>
+      <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+        What would you like to get?
+      </p>
+      <div className="checkbox-group gap-3 justify-center">
+        <label>
+          <input
+            type="checkbox"
+            name="item"
+            value="content"
+            checked={content}
+            onChange={() => handleChange("content")}
+          />
+          Content
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="item"
+            value="images"
+            checked={images}
+            onChange={() => handleChange("images")}
+          />
+          Images
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="item"
+            value="videos"
+            checked={videos}
+            onChange={() => handleChange("videos")}
+          />
+          Videos
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="item"
+            value="audio"
+            checked={audios}
+            onChange={() => handleChange("audios")}
+          />
+          Audios
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="item"
+            value="links"
+            checked={links}
+            onChange={() => handleChange("links")}
+          />
+          Links
+        </label>
+      </div>
     </>
   );
 };

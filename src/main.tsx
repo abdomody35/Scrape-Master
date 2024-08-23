@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import logo from "./assets/react.svg";
+import "./index.css";
+import Header from "./components/Header";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HistoryPage from "./Pages/History.tsx";
@@ -44,11 +45,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="relative flex size-full min-h-screen flex-col bg-[#111418] dark group/design-root overflow-x-hidden">
+      <Header />
+      <div className="layout-container flex h-full grow flex-col">
         <RouterProvider router={router} />
-      </header>
+      </div>
     </div>
   </React.StrictMode>
 );

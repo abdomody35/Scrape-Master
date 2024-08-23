@@ -45,6 +45,13 @@ interface HTTPProps {
   data?: object;
 }
 
+interface QuickStartOptionsProps {
+  icon: string;
+  title: string;
+  description: string;
+  handleClick: () => void;
+}
+
 enum HTTPMethods {
   GET,
   PATCH,
@@ -62,6 +69,7 @@ enum ScrapingTypes {
 }
 
 export type {
+  QuickStartOptionsProps,
   ScrapeResponseProps,
   FetchResponseProps,
   cardData,

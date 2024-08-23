@@ -26,11 +26,15 @@ const HistoryContent = () => {
   const { title, content } = response?.data;
 
   return (
-    <>
-      <GoBackButton />
-      <h1>History Data</h1>
-      <Card key={title} title={title} content={content} />
-    </>
+    <div className="px-40 flex flex-1 justify-center py-10">
+      <div className="layout-content-container flex flex-col max-w-[960px] flex-1 space-y-12">
+        <GoBackButton />
+        <p className="text-white tracking-light text-[32px] font-bold leading-tight min-w-72 text-center">
+          History Data
+        </p>
+        <Card key={title} title={title} content={content} />
+      </div>
+    </div>
   );
 };
 

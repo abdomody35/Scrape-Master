@@ -19,16 +19,24 @@ const FetchContent = () => {
   if (isLoading) return <Loading message={`Fetching ${url}`} />;
 
   if (!response?.data) {
-    return <div>No data found for {url}</div>;
+    return (
+      <p className="text-white tracking-light text-[32px] font-bold leading-tight">
+        No data found for {url}
+      </p>
+    );
   }
 
   const { title, content } = response?.data;
 
   return (
-    <div>
-      <GoBackButton />
-      <h2>Fetch Response</h2>
-      <Card url={url} title={title} content={content} />
+    <div className="px-40 flex flex-1 justify-center py-10">
+      <div className="layout-content-container flex flex-col max-w-[960px] flex-1 space-y-12">
+        <GoBackButton />
+        <p className="text-center text-white tracking-light text-[32px] font-bold leading-tight">
+          Fetch Response
+        </p>
+        <Card url={url} title={title} content={content} />
+      </div>
     </div>
   );
 };

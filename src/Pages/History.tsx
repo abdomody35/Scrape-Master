@@ -20,23 +20,29 @@ const HistoryPage = () => {
   const historyData = response?.data;
 
   return (
-    <>
-      <GoBackButton />
-      <h2>History</h2>
-      <div className="card-container">
-        {historyData?.length > 0 &&
-          historyData?.map((object: any) => (
-            <Card
-              key={object}
-              title={object}
-              handleClick={() => {
-                navigate(`response`, { state: { url: object } });
-              }}
-              className="history-card"
-            />
-          ))}
+    <div className="App">
+      <div className="layout-content-container">
+        <GoBackButton />
+        <div className="flex flex-wrap justify-center gap-3 p-4">
+          <p className="text-white tracking-light text-[32px] font-bold leading-tight min-w-72 text-center">
+            Scraping History
+          </p>
+        </div>
+        <div className="card-container">
+          {historyData?.length > 0 &&
+            historyData?.map((object: any) => (
+              <Card
+                key={object}
+                title={object}
+                handleClick={() => {
+                  navigate(`response`, { state: { url: object } });
+                }}
+                className="history-card"
+              />
+            ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

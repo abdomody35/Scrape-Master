@@ -130,6 +130,10 @@ const handleScrape = (
     return { error: "White list and black list cannot contain the same items" };
   }
 
+  if (!Object.values(modes).some((mode) => mode === true)) {
+    return { error: "Please select at least one data type" };
+  }
+
   const data = determineData({
     type: type,
     whiteList: white_list || [],
